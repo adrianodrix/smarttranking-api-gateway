@@ -1,0 +1,5 @@
+{  
+  "emptyList": "Lista esta vazia",
+  "valueShouldNotBeEmpty": "o valor de {data} deve ser informado",
+  "idIsInvalid": "Código de identificação é inválido"
+}

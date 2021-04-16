@@ -1,0 +1,4 @@
+{
+  "notFound": "Jogador {player} não pode ser encontrado",
+  "exists": "Jogador {player} já cadastrado"
+}

@@ -18,6 +18,7 @@ export class ValidationBodyPipe extends ValidationPipe {
         __dirname,
         '..',
         '..',
+        '..',
         'node_modules/class-validator-multi-lang/i18n/pt.json',
       ),
     ).toString(),

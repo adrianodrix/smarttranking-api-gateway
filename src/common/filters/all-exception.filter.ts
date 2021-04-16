@@ -26,14 +26,14 @@ export class AllExceptionFilter<T> implements ExceptionFilter {
         ? exception.getResponse()
         : {
             statusCode: status,
-            message: 'Internal server error',
+            message: exception['message'] ?? 'Internal server error',
             error: 'Internal server error',
           };
 
     this.logger.error(
-      `Http Status: ${status} Error Message: ${JSON.stringify(
+      `Http Status: ${status}, Error Message: ${JSON.stringify(
         message,
-      )} Exception: ${JSON.stringify(exception)}`,
+      )}, Exception: ${JSON.stringify(exception)}`,
     );
 
     res.status(status).json({

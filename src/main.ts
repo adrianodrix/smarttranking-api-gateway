@@ -1,17 +1,17 @@
 import { NestFactory } from '@nestjs/core';
 import * as momentTimeZone from 'moment-timezone';
 import { AppModule } from './app.module';
-import { AllExceptionFilter } from './filters/all-exception.filter';
-import { LoggingInterceptor } from './interceptors/logging.interceptor';
-import { TimeoutInterceptor } from './interceptors/timeout.interceptor';
-import { ValidationBodyPipe } from './pipes/validation-body.pipe';
+import { AllExceptionFilter } from './common/filters/all-exception.filter';
+import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
+import { TimeoutInterceptor } from './common/interceptors/timeout.interceptor';
+import { ValidationBodyPipe } from './common/pipes/validation-body.pipe';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  app.useGlobalInterceptors(new LoggingInterceptor(), new TimeoutInterceptor());
   app.useGlobalFilters(new AllExceptionFilter());
   app.useGlobalPipes(new ValidationBodyPipe());
-  app.useGlobalInterceptors(new LoggingInterceptor(), new TimeoutInterceptor());
 
   Date.prototype.toJSON = function (): any {
     return momentTimeZone(this)

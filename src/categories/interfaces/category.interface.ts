@@ -1,4 +1,4 @@
-import { IPlayer } from '../players/player.interface';
+import { IPlayer } from '../../players/interfaces/player.interface';
 
 export interface ICategory {
   readonly category: string;

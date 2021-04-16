@@ -1,0 +1,5 @@
+{
+  "notFound": "Categoria {category} não pode ser encontrada",
+  "exists": "Categoria {category} já cadastrada",
+  "playerExists": "Jogador {player} já foi cadastrado na categoria {category}"
+}
